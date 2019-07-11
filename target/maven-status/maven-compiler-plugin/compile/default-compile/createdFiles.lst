@@ -1,0 +1,5 @@
+api\DepartamentoREST.class
+com\diaco\servicios\DiacoBeans.class
+com\diaco\servicios\InterfaceDiaco.class
+com\diaco\apidiaco\DiacoDao.class
+com\diaco\modelo\Departamento.class
