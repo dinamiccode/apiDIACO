@@ -14,28 +14,42 @@ public class Departamento implements Serializable {
 
 	@Id
 	@Column(name="codigo_departamento", precision=0)
-        private Integer codigo_departamento;
+        private Integer codigo;
         @Column(name="nombre_departamento")
-        private String nombre_departamento;
+        private String nombre;
 	
 	public Departamento() {
 	}
 
-        public Integer getCodigo_departamento() {
-            return codigo_departamento;
-        }
+    /**
+     * @return the codigo
+     */
+    public Integer getCodigo() {
+        return codigo;
+    }
 
-        public void setCodigo_departamento(Integer codigo_departamento) {
-            this.codigo_departamento = codigo_departamento;
-        }
+    /**
+     * @param codigo the codigo to set
+     */
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
+    }
 
-        public String getNombre_departamento() {
-            return nombre_departamento;
-        }
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
 
-        public void setNombre_departamento(String nombre_departamento) {
-            this.nombre_departamento = nombre_departamento;
-        }
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+        
 
 
         

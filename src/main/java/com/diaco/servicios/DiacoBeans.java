@@ -2,6 +2,7 @@ package com.diaco.servicios;
 
 import com.diaco.apidiaco.DiacoDao;
 import com.diaco.modelo.Departamento;
+import com.diaco.modelo.Municipio;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
@@ -21,6 +22,17 @@ public class DiacoBeans implements InterfaceDiaco{
         return getDao().findAllDepartamentos();
     }
    
+    
+    public List<Municipio> getMunicipios()
+    {
+        return getDao().findAllMunicipios();
+    }
+    
+    public List<Municipio> getMunicipioId(String idDepartamento)
+    {
+        return getDao().getMunicipioID(idDepartamento);
+    }
+    
     public DiacoDao getDao() {
         return dao;
     }
