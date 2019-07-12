@@ -58,19 +58,7 @@ public class Municipio implements Serializable{
         this.nombre = nombre;
     }
 
-    /**
-     * @return the id_departamento
-     */
-    public String getId_departamento() {
-        return id_departamento;
-    }
-
-    /**
-     * @param id_departamento the id_departamento to set
-     */
-    public void setId_departamento(String id_departamento) {
-        this.id_departamento = id_departamento;
-    }
+    
 
         
 

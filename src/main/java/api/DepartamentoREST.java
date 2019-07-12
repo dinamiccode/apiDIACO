@@ -36,7 +36,7 @@ public class DepartamentoREST {
     
     @GET
     @Path("/departamentos")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
     
     public List<Departamento> getDepartamentos() {
         return interfaceDiaco.getDepartamentos();
@@ -45,7 +45,7 @@ public class DepartamentoREST {
     
     @GET
     @Path("/municipios/{id}")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
     public List<Municipio> getMunicipioId(@PathParam("id") String id) {
         return interfaceDiaco.getMunicipioId(id);
     }

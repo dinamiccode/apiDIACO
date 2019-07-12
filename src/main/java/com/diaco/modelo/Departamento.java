@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="departamento")
-@NamedQuery(name = "Departamento.findAll", query = "SELECT t FROM Departamento t")
+@NamedQuery(name = "Departamento.findAll", query = "SELECT t FROM Departamento t WHERE t.habilitado = 1")
 public class Departamento implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -17,6 +17,8 @@ public class Departamento implements Serializable {
         private Integer codigo;
         @Column(name="nombre_departamento")
         private String nombre;
+        @Column(name="habilitado")
+        private String habilitado;
 	
 	public Departamento() {
 	}
