@@ -2,6 +2,7 @@ package api;
 
 import com.diaco.modelo.Departamento;
 import com.diaco.modelo.Municipio;
+import com.diaco.modelo.category;
 import com.diaco.servicios.InterfaceDiaco;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -37,11 +38,23 @@ public class DepartamentoREST {
     @GET
     @Path("/departamentos")
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    
     public List<Departamento> getDepartamentos() {
         return interfaceDiaco.getDepartamentos();
     }
     
+    @GET
+    @Path("/depa")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    public String getDepa(){
+        return interfaceDiaco.getDepartamentos().toString();
+    }
+    
+    @GET
+    @Path("/category")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    public List<category> getCategory(){
+        return interfaceDiaco.getCategory();
+    }
     
     @GET
     @Path("/municipios/{id}")

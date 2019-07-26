@@ -3,6 +3,7 @@ package com.diaco.servicios;
 import com.diaco.apidiaco.DiacoDao;
 import com.diaco.modelo.Departamento;
 import com.diaco.modelo.Municipio;
+import com.diaco.modelo.category;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionManagement;
@@ -31,6 +32,10 @@ public class DiacoBeans implements InterfaceDiaco{
     public List<Municipio> getMunicipioId(String idDepartamento)
     {
         return getDao().getMunicipioID(idDepartamento);
+    }
+    
+    public List<category> getCategory(){
+        return getDao().getCategory();
     }
     
     public DiacoDao getDao() {

@@ -4,3 +4,4 @@ com\diaco\modelo\Departamento.class
 api\DepartamentoREST.class
 com\diaco\modelo\Municipio.class
 com\diaco\servicios\InterfaceDiaco.class
+com\diaco\modelo\category.class
