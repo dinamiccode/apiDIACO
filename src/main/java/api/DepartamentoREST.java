@@ -3,6 +3,8 @@ package api;
 import com.diaco.modelo.Departamento;
 import com.diaco.modelo.Municipio;
 import com.diaco.modelo.category;
+import com.diaco.modelo.diaco_vaciadocba;
+import com.diaco.modelo.vaciado;
 import com.diaco.servicios.InterfaceDiaco;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -49,12 +51,12 @@ public class DepartamentoREST {
         return interfaceDiaco.getDepartamentos().toString();
     }
     
-    @GET
-    @Path("/category")
-    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    public List<category> getCategory(){
-        return interfaceDiaco.getCategory();
-    }
+//    @GET
+//    @Path("/category")
+//    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+//    public List<category> getCategory(){
+//        return interfaceDiaco.getCategory();
+//    }
     
     @GET
     @Path("/municipios/{id}")
@@ -62,6 +64,28 @@ public class DepartamentoREST {
     public List<Municipio> getMunicipioId(@PathParam("id") String id) {
         return interfaceDiaco.getMunicipioId(id);
     }
+    
+    @GET
+    @Path("/p")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<diaco_vaciadocba> getPre(){
+        return interfaceDiaco.getPrecio();
+    }
+    
+    @GET
+    @Path("/pre/{categoria}/{municipio}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String getPrecio(@PathParam("categoria") Integer categoria,@PathParam("municipio") Integer municipio){
+        return interfaceDiaco.getvaciaso(categoria,municipio).toString();
+    }
+    
+    @GET
+    @Path("/precio/{categoria}/{municipio}")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    public String getDatosPrecios(@PathParam("categoria") Integer categoria,@PathParam("municipio") Integer municipio){
+        return interfaceDiaco.getvaciaso(categoria, municipio).toString();
+    }
+    
 //    public List<Municipio> getMunicipios(@PathParam("id") String id) {
 //        return interfaceDiaco.getMunicipios();
 //    }
