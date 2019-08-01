@@ -1,6 +1,7 @@
 
 package com.diaco.modelo;
 
+import com.google.gson.JsonObject;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -47,5 +48,20 @@ public class category implements Serializable{
         this.name = name;
     }
     
+    @Override
+    public String toString() {
+        JsonObject temp = new JsonObject();
+        temp.addProperty("code",this.code);
+        temp.addProperty("name",this.name);
+
+        return temp.toString();
+    }
+
+     public JsonObject toJsonelement() {
+            JsonObject temp = new JsonObject();
+            temp.addProperty("codeCategory",this.code);
+            temp.addProperty("nameCategory",this.name);
+            return temp;
+        }
     
 }

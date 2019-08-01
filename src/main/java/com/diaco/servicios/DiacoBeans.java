@@ -4,6 +4,9 @@ import com.diaco.apidiaco.DiacoDao;
 import com.diaco.modelo.Departamento;
 import com.diaco.modelo.Municipio;
 import com.diaco.modelo.category;
+import com.diaco.modelo.diaco_diaco_name_template;
+import com.diaco.modelo.diaco_plantilla;
+import com.diaco.modelo.diaco_precio;
 import com.diaco.modelo.diaco_vaciadocba;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -53,6 +56,21 @@ public class DiacoBeans implements InterfaceDiaco{
 //    }
     
     
+    
+    //------------------------------------------ joins adicionales
+    
+    
+    public List<diaco_diaco_name_template> getDataPrecio2(){
+        return getDao().getDataPrecio2();
+    }
+    
+    public List<diaco_precio> getDataPrecio(){
+        return getDao().getDataPrecio();
+    }
+    
+    public List<diaco_plantilla> getPlantilla(){
+        return getDao().getPlantilla();
+    }
     public DiacoDao getDao() {
         return dao;
     }

@@ -3,6 +3,8 @@ package api;
 import com.diaco.modelo.Departamento;
 import com.diaco.modelo.Municipio;
 import com.diaco.modelo.category;
+import com.diaco.modelo.diaco_diaco_name_template;
+import com.diaco.modelo.diaco_precio;
 import com.diaco.modelo.diaco_vaciadocba;
 import com.diaco.modelo.vaciado;
 import com.diaco.servicios.InterfaceDiaco;
@@ -51,12 +53,12 @@ public class DepartamentoREST {
         return interfaceDiaco.getDepartamentos().toString();
     }
     
-//    @GET
-//    @Path("/category")
-//    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-//    public List<category> getCategory(){
-//        return interfaceDiaco.getCategory();
-//    }
+    @GET
+    @Path("/locationCategory")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    public String getLocationCategory(){
+        return interfaceDiaco.getDepartamentos().toString();
+    }
     
     @GET
     @Path("/municipios/{id}")
@@ -85,6 +87,42 @@ public class DepartamentoREST {
     public String getDatosPrecios(@PathParam("categoria") Integer categoria,@PathParam("municipio") Integer municipio){
         return interfaceDiaco.getvaciaso(categoria, municipio).toString();
     }
+    
+    @GET
+    @Path("/category")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    public String getCategorias(){
+        return interfaceDiaco.getCategory().toString();
+    }
+    
+    
+    
+    //**********************JOIN NUEVOS
+    
+    @GET
+    @Path("/pp")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    public String getDataPrecio(){
+        return interfaceDiaco.getDataPrecio().toString();
+    }
+    
+    @GET
+    @Path("/pp2")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    public String getDataPrecio2(){
+        return interfaceDiaco.getDataPrecio2().toString();
+    }
+    
+    
+    @GET
+    @Path("/pp3")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    public String getPlantilla(){
+        return interfaceDiaco.getPlantilla().toString();
+    }
+    
+    
+    
     
 //    public List<Municipio> getMunicipios(@PathParam("id") String id) {
 //        return interfaceDiaco.getMunicipios();

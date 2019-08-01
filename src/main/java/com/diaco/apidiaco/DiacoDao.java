@@ -3,6 +3,9 @@ package com.diaco.apidiaco;
 import com.diaco.modelo.Departamento;
 import com.diaco.modelo.Municipio;
 import com.diaco.modelo.category;
+import com.diaco.modelo.diaco_diaco_name_template;
+import com.diaco.modelo.diaco_plantilla;
+import com.diaco.modelo.diaco_precio;
 import com.diaco.modelo.diaco_vaciadocba;
 import com.diaco.modelo.vaciado;
 import java.util.Iterator;
@@ -65,6 +68,21 @@ public class DiacoDao {
 
     }
     
+    
+    //-----------------------------------------JOINS NUEVOS
+    
+    
+    public List<diaco_diaco_name_template> getDataPrecio2(){
+        return em.createNamedQuery("vaciadotemplate.findAll").getResultList();
+    }
+    
+    public List<diaco_plantilla> getPlantilla(){
+        return em.createNamedQuery("vaciadoPlantilla.findAll").getResultList();
+    }
+    
+    public List<diaco_precio> getDataPrecio(){
+        return em.createNamedQuery("VaciadoPrecios.findAll").getResultList();
+    }
     public EntityManager getEm() {
             return em;
         }

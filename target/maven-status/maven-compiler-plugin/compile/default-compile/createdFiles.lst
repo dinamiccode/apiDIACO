@@ -1,10 +1,13 @@
+com\diaco\modelo\diaco_diaco_name_template.class
+com\diaco\modelo\diaco_plantilla.class
+com\diaco\modelo\diaco_vaciadocba.class
+api\DepartamentoREST.class
+com\diaco\servicios\InterfaceDiaco.class
 com\diaco\servicios\DiacoBeans.class
+com\diaco\modelo\diaco_precio.class
 com\diaco\apidiaco\DiacoDao.class
 com\diaco\modelo\Departamento.class
 com\diaco\modelo\DiacoAsignarsedecba.class
-com\diaco\modelo\diaco_vaciadocba.class
-api\DepartamentoREST.class
 com\diaco\modelo\Municipio.class
 com\diaco\modelo\vaciado.class
-com\diaco\servicios\InterfaceDiaco.class
 com\diaco\modelo\category.class
