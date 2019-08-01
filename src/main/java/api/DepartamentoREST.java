@@ -1,5 +1,6 @@
 package api;
 
+import com.diaco.model.diaco_jpql;
 import com.diaco.modelo.Departamento;
 import com.diaco.modelo.Municipio;
 import com.diaco.modelo.category;
@@ -121,7 +122,12 @@ public class DepartamentoREST {
         return interfaceDiaco.getPlantilla().toString();
     }
     
-    
+    @GET
+    @Path("/pp4")
+    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+    public List<diaco_jpql> getListData(){
+        return interfaceDiaco.getListData();
+    }
     
     
 //    public List<Municipio> getMunicipios(@PathParam("id") String id) {

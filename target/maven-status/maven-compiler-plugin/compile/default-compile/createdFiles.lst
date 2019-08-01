@@ -1,5 +1,6 @@
 com\diaco\modelo\diaco_diaco_name_template.class
 com\diaco\modelo\diaco_plantilla.class
+com\diaco\model\diaco_jpql.class
 com\diaco\modelo\diaco_vaciadocba.class
 api\DepartamentoREST.class
 com\diaco\servicios\InterfaceDiaco.class

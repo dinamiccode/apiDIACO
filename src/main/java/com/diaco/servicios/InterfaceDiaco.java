@@ -1,5 +1,6 @@
 package com.diaco.servicios;
 
+import com.diaco.model.diaco_jpql;
 import com.diaco.modelo.Departamento;
 import com.diaco.modelo.Municipio;
 import com.diaco.modelo.category;
@@ -31,6 +32,8 @@ public interface InterfaceDiaco {
     public List<diaco_plantilla> getPlantilla();
     
     public List<diaco_precio> getDataPrecio();
+    
+    public List<diaco_jpql> getListData();
 //    public List<diaco_precio> getDataPrecio();
     
 }

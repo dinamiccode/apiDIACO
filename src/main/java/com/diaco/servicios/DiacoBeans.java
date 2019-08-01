@@ -1,6 +1,7 @@
 package com.diaco.servicios;
 
 import com.diaco.apidiaco.DiacoDao;
+import com.diaco.model.diaco_jpql;
 import com.diaco.modelo.Departamento;
 import com.diaco.modelo.Municipio;
 import com.diaco.modelo.category;
@@ -71,6 +72,11 @@ public class DiacoBeans implements InterfaceDiaco{
     public List<diaco_plantilla> getPlantilla(){
         return getDao().getPlantilla();
     }
+    
+    public List<diaco_jpql> getListData(){
+        return getDao().getListData();
+    }
+    
     public DiacoDao getDao() {
         return dao;
     }

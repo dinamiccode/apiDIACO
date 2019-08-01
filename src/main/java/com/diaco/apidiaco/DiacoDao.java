@@ -1,5 +1,6 @@
 package com.diaco.apidiaco;
 
+import com.diaco.model.diaco_jpql;
 import com.diaco.modelo.Departamento;
 import com.diaco.modelo.Municipio;
 import com.diaco.modelo.category;
@@ -83,6 +84,34 @@ public class DiacoDao {
     public List<diaco_precio> getDataPrecio(){
         return em.createNamedQuery("VaciadoPrecios.findAll").getResultList();
     }
+    
+    public List<diaco_jpql> getListData(){
+        Query query = em.createNativeQuery("select distinct\n" +
+"		plantilla.idCategoria, \n" +
+"		categoria.nombre,asignacion.idSede, muni.nombre_municipio ,\n" +
+"		depa.nombre_departamento\n" +
+"		from diaco_vaciadocba vacio\n" +
+"	INNER JOIN diaco_name_template_cba template\n" +
+"		ON template.id = vacio.idPlantilla\n" +
+"	INNER JOIN diaco_plantillascba plantilla\n" +
+"		ON plantilla.NombrePlantilla = template.NombreTemplate\n" +
+"	INNER JOIN diaco_categoriacba categoria\n" +
+"		ON categoria.id_Categoria = plantilla.idCategoria\n" +
+"	INNER JOIN diaco_asignarsedecba asignacion\n" +
+"		ON asignacion.idPlantilla = vacio.idPlantilla\n" +
+"	INNER JOIN diaco_sede sede\n" +
+"		ON sede.id_diaco_sede = asignacion.idSede\n" +
+"	INNER JOIN municipio muni\n" +
+"		ON muni.codigo_municipio = sede.id_diaco_sede \n" +
+"	INNER JOIN departamento depa\n" +
+"		ON depa.codigo_departamento = muni.codigo_departamento");
+//        query.setParameter("first", "Bob");
+//        query.setParameter("last", "Smith");
+        List<diaco_jpql> lista = query.getResultList();
+        return lista;
+        
+    }
+    
     public EntityManager getEm() {
             return em;
         }

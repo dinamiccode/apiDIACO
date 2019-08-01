@@ -36,9 +36,9 @@ public class diaco_precio implements Serializable{
     
     @Column(name="NombreTemplate")
     private String NombreTemplate;
-    @JoinColumn(name = "NombreTemplate", referencedColumnName = "NombrePlantilla",updatable=false, insertable=false)
-    @OneToOne
-     private diaco_plantilla tipoPlantilla; 
+//    @JoinColumn(name = "NombreTemplate", referencedColumnName = "NombrePlantilla",updatable=false, insertable=false)
+//    @OneToOne
+//     private diaco_plantilla tipoPlantilla; 
     //@Column(name="NombrePlantilla")
     //private String Plantilla;
 //    @JoinColumn(name = "Plantilla", referencedColumnName = "NombrePlantilla",updatable=false, insertable=false)
@@ -95,7 +95,7 @@ public class diaco_precio implements Serializable{
             JsonObject precio = new JsonObject();
             
                 precio.addProperty("Plantilla",this.tipoTemplate.getId());
-                precio.addProperty("template", this.tipoPlantilla.getIdCategoria());
+                //precio.addProperty("template", this.tipoPlantilla.getIdCategoria());
                 //precio.addProperty("nombre",this.tipoPlantilla.getNombrePlantilla());
                 //precio.addProperty("Nombre",this.tipoTemplate.getNombreTemplate());
 //            temp.addProperty("name",this.nombre);
