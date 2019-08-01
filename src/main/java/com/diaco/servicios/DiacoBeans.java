@@ -1,6 +1,8 @@
 package com.diaco.servicios;
 
 import com.diaco.apidiaco.DiacoDao;
+import com.diaco.model.diaco_categorias;
+import com.diaco.model.diaco_departamentos;
 import com.diaco.model.diaco_jpql;
 import com.diaco.modelo.Departamento;
 import com.diaco.modelo.Municipio;
@@ -24,10 +26,10 @@ public class DiacoBeans implements InterfaceDiaco{
     private DiacoDao dao;
     
     @Override
-    public List<Departamento> getDepartamentos()
-    {
-        return getDao().findAllDepartamentos();
-    }
+//    public List<Departamento> getDepartamentos()
+//    {
+//        return getDao().findAllDepartamentos();
+//    }
    
     
     public List<Municipio> getMunicipios()
@@ -75,6 +77,14 @@ public class DiacoBeans implements InterfaceDiaco{
     
     public List<diaco_jpql> getListData(){
         return getDao().getListData();
+    }
+    
+    public List<diaco_departamentos> getDepartamentosAll(){
+        return getDao().getDepartamentosAll();
+    }
+    
+    public List<diaco_categorias> getCategoriasAll(){
+        return getDao().getCategoriasAll();
     }
     
     public DiacoDao getDao() {

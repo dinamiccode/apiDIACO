@@ -1,5 +1,7 @@
 package api;
 
+import com.diaco.model.diaco_categorias;
+import com.diaco.model.diaco_departamentos;
 import com.diaco.model.diaco_jpql;
 import com.diaco.modelo.Departamento;
 import com.diaco.modelo.Municipio;
@@ -40,26 +42,26 @@ public class DepartamentoREST {
     @Inject
     private InterfaceDiaco interfaceDiaco;
     
-    @GET
-    @Path("/departamentos")
-    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    public List<Departamento> getDepartamentos() {
-        return interfaceDiaco.getDepartamentos();
-    }
+//    @GET
+//    @Path("/departamentos")
+//    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+//    public List<Departamento> getDepartamentos() {
+//        return interfaceDiaco.getDepartamentos();
+//    }
     
-    @GET
-    @Path("/depa")
-    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    public String getDepa(){
-        return interfaceDiaco.getDepartamentos().toString();
-    }
+//    @GET
+//    @Path("/depa")
+//    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+//    public String getDepa(){
+//        return interfaceDiaco.getDepartamentos().toString();
+//    }
     
-    @GET
-    @Path("/locationCategory")
-    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    public String getLocationCategory(){
-        return interfaceDiaco.getDepartamentos().toString();
-    }
+//    @GET
+//    @Path("/locationCategory")
+//    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+//    public String getLocationCategory(){
+//        return interfaceDiaco.getDepartamentos().toString();
+//    }
     
     @GET
     @Path("/municipios/{id}")
@@ -100,35 +102,56 @@ public class DepartamentoREST {
     
     //**********************JOIN NUEVOS
     
+//    @GET
+//    @Path("/pp")
+//    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+//    public String getDataPrecio(){
+//        return interfaceDiaco.getDataPrecio().toString();
+//    }
+//    
+//    @GET
+//    @Path("/pp2")
+//    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+//    public String getDataPrecio2(){
+//        return interfaceDiaco.getDataPrecio2().toString();
+//    }
+//    
+//    
+//    @GET
+//    @Path("/pp3")
+//    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+//    public String getPlantilla(){
+//        return interfaceDiaco.getPlantilla().toString();
+//    }
+//    
+//    @GET
+//    @Path("/pp4")
+//    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
+//    public List<diaco_jpql> getListData(){
+//        return interfaceDiaco.getListData();
+//    }http://jjolon:8080/apirest/diaco/municipios2
+    
+    
     @GET
-    @Path("/pp")
+    @Path("/locationCategory")
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    public String getDataPrecio(){
-        return interfaceDiaco.getDataPrecio().toString();
+    public String getDepartamentosAll(){
+        return interfaceDiaco.getDepartamentosAll().toString();
     }
     
     @GET
-    @Path("/pp2")
+    @Path("/categoryp")
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    public String getDataPrecio2(){
-        return interfaceDiaco.getDataPrecio2().toString();
-    }
-    
-    
-    @GET
-    @Path("/pp3")
-    @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    public String getPlantilla(){
-        return interfaceDiaco.getPlantilla().toString();
+    public String getCategoriasAll(){
+        return interfaceDiaco.getCategoriasAll().toString();
     }
     
     @GET
-    @Path("/pp4")
+    @Path("/municipios2")
     @Produces(MediaType.APPLICATION_JSON + ";charset=utf-8")
-    public List<diaco_jpql> getListData(){
-        return interfaceDiaco.getListData();
+    public String getMunicipioId2() {
+        return interfaceDiaco.getMunicipios().toString();
     }
-    
     
 //    public List<Municipio> getMunicipios(@PathParam("id") String id) {
 //        return interfaceDiaco.getMunicipios();

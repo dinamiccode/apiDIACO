@@ -1,5 +1,7 @@
 package com.diaco.servicios;
 
+import com.diaco.model.diaco_categorias;
+import com.diaco.model.diaco_departamentos;
 import com.diaco.model.diaco_jpql;
 import com.diaco.modelo.Departamento;
 import com.diaco.modelo.Municipio;
@@ -12,7 +14,7 @@ import com.diaco.modelo.vaciado;
 import java.util.List;
 
 public interface InterfaceDiaco {
-    public List<Departamento> getDepartamentos();
+//    public List<Departamento> getDepartamentos();
     
     public List<Municipio> getMunicipios();
     
@@ -34,6 +36,10 @@ public interface InterfaceDiaco {
     public List<diaco_precio> getDataPrecio();
     
     public List<diaco_jpql> getListData();
+    
+    public List<diaco_departamentos> getDepartamentosAll();
+    
+    public List<diaco_categorias> getCategoriasAll();
 //    public List<diaco_precio> getDataPrecio();
     
 }

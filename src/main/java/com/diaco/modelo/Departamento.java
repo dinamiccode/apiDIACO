@@ -39,7 +39,7 @@ public class Departamento implements Serializable {
 //        private Integer id_Categoria;
 //        @JoinColumn(name = "id_Categoria", referencedColumnName = "id_Categoria", updatable=false, insertable = false)
 //        @OneToOne
-        private List<category> typeCategory = new ArrayList<>();
+        //private List<category> typeCategory = new ArrayList<>();
         
 	public Departamento() {
 	}

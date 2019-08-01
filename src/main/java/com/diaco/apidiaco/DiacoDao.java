@@ -1,5 +1,7 @@
 package com.diaco.apidiaco;
 
+import com.diaco.model.diaco_categorias;
+import com.diaco.model.diaco_departamentos;
 import com.diaco.model.diaco_jpql;
 import com.diaco.modelo.Departamento;
 import com.diaco.modelo.Municipio;
@@ -9,6 +11,7 @@ import com.diaco.modelo.diaco_plantilla;
 import com.diaco.modelo.diaco_precio;
 import com.diaco.modelo.diaco_vaciadocba;
 import com.diaco.modelo.vaciado;
+import com.diaco.model.diaco_departamentos;
 import java.util.Iterator;
 import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
@@ -111,6 +114,17 @@ public class DiacoDao {
         return lista;
         
     }
+    
+    public List<diaco_departamentos> getDepartamentosAll(){
+            em.getEntityManagerFactory().getCache().evict(diaco_departamentos.class);
+        return  em.createNamedStoredProcedureQuery("getDepartamentAll").getResultList(); 
+    }
+    
+    public List<diaco_categorias> getCategoriasAll(){
+            em.getEntityManagerFactory().getCache().evict(diaco_categorias.class);
+        return  em.createNamedStoredProcedureQuery("getCategoriasAll").getResultList(); 
+    }
+    
     
     public EntityManager getEm() {
             return em;
